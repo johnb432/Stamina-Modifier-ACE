@@ -35,7 +35,7 @@ If you set the duty factors to be too low, meaning you consume more stamina than
 
 [h2]Links[/h2]
 [list]
-[*] [url=]Steam Workshop[/url]
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2935789314]Steam Workshop[/url]
 [*] [url=https://github.com/johnb432/Stamina-Modifier-ACE]GitHub[/url]
 [/list]
 
