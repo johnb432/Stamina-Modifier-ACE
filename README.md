@@ -17,6 +17,7 @@ Higher setting values mean lower stamina drain.
 * **Weapon-raised-sprinting compensation:** If enabled and you are sprinting, it will not apply the **Weapon raised duty factor** setting's value to the duty factor.
 * **Swim-sprinting duty factor:** Duty factor that is applied, when you are swimming quickly.
 * **Dive-sprinting duty factor:** Duty factor that is applied, when you are diving quickly.
+* **Muscle damage factor:** Factor that is applied to muscle damage.
 
 <h2>Examples</h2>
 
@@ -29,6 +30,7 @@ If multiple duty factors apply, they are multiplied together.
 * If a player is in the crouching position and sprinting, with his weapon raised and **Weapon-raised-sprinting compensation** disabled, the **Crouch-sprinting duty factor** will apply as well as the **Weapon raised duty factor**.
 * If a player is in the crouching position and sprinting, with his weapon raised and **Weapon-raised-sprinting compensation** enabled, only the **Crouch-sprinting duty factor** will apply.
 * You can't sprint and aim down the gun sights at the same time (not with ACE at least), therefore this case is never taken into account.
+* You can make muscle damage disappear over time, if you set the **Muscle damage factor** <1.
 
 <h2>Warning</h2>
 If you set the duty factors to be too low, meaning you consume more stamina than default ACE Advanced Fatigue, it might drain your stamina too quickly and break ACE Advanced Fatigue by not regenerating stamina anymore.
