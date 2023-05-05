@@ -1,4 +1,4 @@
-[b]Stamina Modifier - ACE[/b] is a client side mod and adds the ability to tweak ACE Advanced Fatigue.
+[b]Stamina Modifier - ACE[/b] is a client side mod and adds the ability to tweak ACE Advanced Fatigue. This is not an official ACE mod.
 
 [h2]CBA Settings[/h2]
 Higher setting values mean lower stamina drain.
@@ -16,7 +16,9 @@ Higher setting values mean lower stamina drain.
 [*] [b]Weapon-raised-sprinting compensation:[/b] If enabled and you are sprinting, it will not apply the [b]Weapon raised duty factor[/b] setting's value to the duty factor.
 [*] [b]Swim-sprinting duty factor:[/b] Duty factor that is applied, when you are swimming quickly.
 [*] [b]Dive-sprinting duty factor:[/b] Duty factor that is applied, when you are diving quickly.
-[*] [b]Muscle damage factor:[/b] Factor that is applied to muscle damage.
+[*] [b]Muscle damage recovery factor:[/b] Recovery factor that is applied to muscle damage.
+[*] [b]AE1 Reserve recovery factor:[/b] Recovery factor that is applied to the AE1 Reserve.
+[*] [b]AE2 Reserve recovery factor:[/b] Recovery factor that is applied to the AE2 Reserve.
 [/list]
 
 [h2]Examples[/h2]

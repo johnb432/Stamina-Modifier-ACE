@@ -10,6 +10,6 @@ tooltip = "Stamina Modifier - ACE";
 tooltipOwned = "Stamina Modifier - ACE";
 action = "https://github.com/johnb432/Stamina-Modifier-ACE";
 actionName = "Github";
-overview = "A small mod that can modify ACE Advanced Fatigue, made by johnb43.";
+overview = "A small mod that can modify ACE Advanced Fatigue. Made by johnb43.";
 hidePicture = 0;
 hideName = 0;

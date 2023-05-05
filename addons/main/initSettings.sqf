@@ -108,9 +108,26 @@
 [
     QGVAR(muscleDamageFactor),
     "SLIDER",
-    ["Muscle damage factor", "Factor that is applied to muscle damage. If set to 0, muscle damage is disabled.\nIf you don't want to change ACE advanced fatigue's default behaviour for muscle damage, you must set this setting to 1."],
+    ["Muscle damage recovery factor", "Recovery factor that is applied to muscle damage. If set to 0, muscle damage is disabled.\nIf you don't want to change ACE advanced fatigue's default behaviour for muscle damage, you must set this setting to 1."],
     [COMPONENT_NAME, "Muscle Damage"],
     [0, 1.5, 1, 4]
+] call CBA_fnc_addSetting;
+
+// AE reserves
+[
+    QGVAR(ae1ReserveFactor),
+    "SLIDER",
+    ["AE1 Reserves recovery factor", "Recovery factor that is applied to the AE1 Reserve. If set to < 0, the AE1 Reserve are kept at maximum.\nIf you don't want to change ACE advanced fatigue's default behaviour for muscle damage, you must set this setting to 1."],
+    [COMPONENT_NAME, "AE Reserves"],
+    [-0.01, 1.5, 1, 6]
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(ae2ReserveFactor),
+    "SLIDER",
+    ["AE2 Reserve recovery factor", "Recovery factor that is applied to the AE1 Reserve. If set to < 0, the AE1 Reserve are kept at maximum.\nIf you don't want to change ACE advanced fatigue's default behaviour for muscle damage, you must set this setting to 1."],
+    [COMPONENT_NAME, "AE Reserves"],
+    [-0.01, 1.5, 1, 6]
 ] call CBA_fnc_addSetting;
 
 // 'ace_advanced_fatigue_enabled' can only be set at mission start
@@ -121,5 +138,17 @@
         if (!alive ACE_player) exitWith {};
 
         ace_advanced_fatigue_muscleDamage = ace_advanced_fatigue_muscleDamage * GVAR(muscleDamageFactor);
+
+        if (GVAR(ae1ReserveFactor) < 0) then {
+            ace_advanced_fatigue_ae1Reserve = AE1_MAXRESERVE;
+        } else {
+            ace_advanced_fatigue_ae1Reserve = ((ace_advanced_fatigue_ae1Reserve * GVAR(ae1ReserveFactor)) min AE1_MAXRESERVE) max 0;
+        };
+
+        if (GVAR(ae2ReserveFactor) < 0) then {
+            ace_advanced_fatigue_ae2Reserve = AE2_MAXRESERVE;
+        } else {
+            ace_advanced_fatigue_ae2Reserve = ((ace_advanced_fatigue_ae2Reserve * GVAR(ae2ReserveFactor)) min AE2_MAXRESERVE) max 0;
+        };
     }, 1] call CBA_fnc_addPerFrameHandler;
 }] call CBA_fnc_addEventHandler;

@@ -1,4 +1,4 @@
-**Stamina Modifier - ACE** is a client side mod and adds the ability to tweak ACE Advanced Fatigue.
+**Stamina Modifier - ACE** is a client side mod and adds the ability to tweak ACE Advanced Fatigue. This is not an official ACE mod.
 
 <h2>CBA Settings</h2>
 
@@ -17,7 +17,9 @@ Higher setting values mean lower stamina drain.
 * **Weapon-raised-sprinting compensation:** If enabled and you are sprinting, it will not apply the **Weapon raised duty factor** setting's value to the duty factor.
 * **Swim-sprinting duty factor:** Duty factor that is applied, when you are swimming quickly.
 * **Dive-sprinting duty factor:** Duty factor that is applied, when you are diving quickly.
-* **Muscle damage factor:** Factor that is applied to muscle damage.
+* **Muscle damage recovery factor:** Recovery factor that is applied to muscle damage.
+* **AE1 Reserve recovery factor:** Recovery factor that is applied to the AE1 Reserve.
+* **AE2 Reserve recovery factor:** Recovery factor that is applied to the AE2 Reserve.
 
 <h2>Examples</h2>
 
@@ -47,9 +49,3 @@ If you set the duty factors to be too low, meaning you consume more stamina than
 <h2>License</h2>
 
 See LICENSE.
-
-<h2>How to create PBOs</h2>
-
-* Download and install hemtt from [here](https://github.com/BrettMayson/HEMTT)
-* Open command terminal, navigate to said folder (Windows: cd 'insert path')
-* Type "hemtt build" for pbo, "hemtt build --release" for entire release
