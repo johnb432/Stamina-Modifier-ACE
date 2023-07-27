@@ -1,3 +1,8 @@
+# Changelog for Stamina Modifier - ACE 27.7.2023
+
+1.0.0.3
+- Added compatibility with Alternative Running. 
+
 # Changelog for Stamina Modifier - ACE 5.5.2023
 
 1.0.0.2

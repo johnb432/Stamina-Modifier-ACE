@@ -52,6 +52,11 @@
         };
     };
 
+    // Alternative running compat
+    if (GVAR(alternativeRunningEnabled) && {_animName in ["arma_alternativerunwithlauncher", "arma_alternativepistol", "arma_alternativerun_water_light", "arma_alternativerun", "arma_alternativerunlowered", "arma_alternativerun_water_heavy", "arma_alternativerun_ww2style"]}) then {
+        _duty = _duty / GVAR(advancedFatigueDutyAlternativeRunning);
+    };
+
     _duty
 }] call ace_advanced_fatigue_fnc_addDutyFactor;
 

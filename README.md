@@ -17,6 +17,7 @@ Higher setting values mean lower stamina drain.
 * **Weapon-raised-sprinting compensation:** If enabled and you are sprinting, it will not apply the **Weapon raised duty factor** setting's value to the duty factor.
 * **Swim-sprinting duty factor:** Duty factor that is applied, when you are swimming quickly.
 * **Dive-sprinting duty factor:** Duty factor that is applied, when you are diving quickly.
+* **Alternative running duty factor:** Duty factor that is applied, if "Alternative Running" is loaded and if you are using one of its animations.
 * **Muscle damage recovery factor:** Recovery factor that is applied to muscle damage.
 * **AE1 Reserve recovery factor:** Recovery factor that is applied to the AE1 Reserve.
 * **AE2 Reserve recovery factor:** Recovery factor that is applied to the AE2 Reserve.
@@ -36,6 +37,8 @@ If multiple duty factors apply, they are multiplied together.
 
 <h2>Warning</h2>
 If you set the duty factors to be too low, meaning you consume more stamina than default ACE Advanced Fatigue, it might drain your stamina too quickly and break ACE Advanced Fatigue by not regenerating stamina anymore.
+
+If you use [ACE - D.U.M.P](https://steamcommunity.com/sharedfiles/filedetails/?id=2975583316), set 'Muscle damage recovery factor', 'AE1 Reserve recovery factor' and 'AE2 Reserve recovery factor' to 1.
 
 <h2>Links</h2>
 

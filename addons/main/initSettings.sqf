@@ -104,6 +104,19 @@
     DEFAULT_SETTINGS
 ] call CBA_fnc_addSetting;
 
+GVAR(alternativeRunningEnabled) = isClass (configFile >> "CfgPatches" >> "Alternative_Running");
+
+// Alternative running compat
+if (GVAR(alternativeRunningEnabled)) then {
+    [
+        QGVAR(advancedFatigueDutyAlternativeRunning),
+        "SLIDER",
+        ["Alternative running duty factor", "Duty factor that is applied when using alternative running. Higher means lower stamina drain.\nIf you don't want to change ACE advanced fatigue's default behaviour when using alternative running, you must set this setting to 1."],
+        [COMPONENT_NAME, "Sprinting"],
+        DEFAULT_SETTINGS
+    ] call CBA_fnc_addSetting;
+};
+
 // Muscle damage
 [
     QGVAR(muscleDamageFactor),
