@@ -52,13 +52,57 @@
         };
     };
 
-    // Alternative running compat
-    if (GVAR(alternativeRunningEnabled) && {_animName in ["arma_alternativerunwithlauncher", "arma_alternativepistol", "arma_alternativerun_water_light", "arma_alternativerun", "arma_alternativerunlowered", "arma_alternativerun_water_heavy", "arma_alternativerun_ww2style"]}) then {
-        _duty = _duty / GVAR(advancedFatigueDutyAlternativeRunning);
-    };
-
     _duty
 }] call ace_advanced_fatigue_fnc_addDutyFactor;
+
+// Alternative Running - compat
+if (isClass (configFile >> "CfgPatches" >> "Alternative_Running")) then {
+    [QGVAR(advancedFatigueAlternativeRunningDuty), {
+        params ["_unit"];
+
+        private _duty = 1;
+
+        if ((animationState _unit) in ["arma_alternativerunwithlauncher", "arma_alternativepistol", "arma_alternativerun_water_light", "arma_alternativerun", "arma_alternativerunlowered", "arma_alternativerun_water_heavy", "arma_alternativerun_ww2style"]) then {
+            _duty = 1 / GVAR(advancedFatigueDutyAlternativeRunning);
+        };
+
+        _duty
+    }] call ace_advanced_fatigue_fnc_addDutyFactor;
+};
+
+// Advanced Vault System: Remastered - compat
+if (isClass (configFile >> "CfgPatches" >> "APS_System")) then {
+    [QGVAR(advancedFatigueAVSRemasteredDuty), {
+        params ["_unit"];
+
+        private _animName = animationState _unit;
+
+        switch (true) do {
+            // Vaulting
+            case (_animName in [
+                "mainweapon_vault_fast", "pistol_vault_fast", "unarmed_vault_fast", "mainweapon_vault_slow", "pistol_vault_fast", "unarmed_vault_slow", "mainweapon_vault_little", "pistol_vault_little", "unarmed_vault_little",
+                "mainweapon_vault_middle", "pistol_vault_middle", "unarmed_vault_middle", "mainweapon_vault_middle_over", "pistol_vault_middle_over", "unarmed_vault_middle_over"
+            ]): {
+                1 / GVAR(advancedFatigueDutyAVSVault)
+            };
+            // Climbing
+            case (_animName in ["mainweapon_climb_on", "unarmed_climb_on", "mainweapon_climb_on_over", "unarmed_climb_on_over", "unarmed_in_air_grab_middle", "unarmed_in_air_grab_high"]): {
+                1 / GVAR(advancedFatigueDutyAVSClimb)
+            };
+            // Jumping
+            case (_animName in ["mainweapon_jump_land_roll", "pistol_jump_land_roll", "unarmed_jump_land_roll"]): {
+                1 / GVAR(advancedFatigueDutyAVSJump)
+            };
+            // Sliding
+            case (_animName in ["mainweapon_slide", "pistol_slide"]): {
+                1 / GVAR(advancedFatigueDutyAVSSlide)
+            };
+            default {
+                1
+            };
+        }
+    }] call ace_advanced_fatigue_fnc_addDutyFactor;
+};
 
 GVAR(sprinting) = false;
 

@@ -16,10 +16,14 @@ Higher setting values mean lower stamina drain.
 [*] [b]Weapon-raised-sprinting compensation:[/b] If enabled and you are sprinting, it will not apply the [b]Weapon raised duty factor[/b] setting's value to the duty factor.
 [*] [b]Swim-sprinting duty factor:[/b] Duty factor that is applied, when you are swimming quickly.
 [*] [b]Dive-sprinting duty factor:[/b] Duty factor that is applied, when you are diving quickly.
-[*] [b]Alternative running duty factor:[/b] Duty factor that is applied, if "Alternative Running" is loaded and if you are using one of its animations.
 [*] [b]Muscle damage recovery factor:[/b] Recovery factor that is applied to muscle damage.
 [*] [b]AE1 Reserve recovery factor:[/b] Recovery factor that is applied to the AE1 Reserve.
 [*] [b]AE2 Reserve recovery factor:[/b] Recovery factor that is applied to the AE2 Reserve.
+[*] [b]Alternative running duty factor:[/b] Duty factor that is applied, if "Alternative Running" is loaded and if you are using one of its animations.
+[*] [b]AVS vaulting duty factor:[/b] Duty factor that is applied, if "Advanced Vault System: Remastered" is loaded and if you are using one of its vaulting animations.
+[*] [b]AVS climbing duty factor:[/b] Duty factor that is applied, if "Advanced Vault System: Remastered" is loaded and if you are using one of its climbing animations.
+[*] [b]AVS jumping duty factor:[/b] Duty factor that is applied, if "Advanced Vault System: Remastered" is loaded and if you are using one of its jumping animations.
+[*] [b]AVS sliding duty factor:[/b] Duty factor that is applied, if "Advanced Vault System: Remastered" is loaded and if you are using one of its sliding animations.
 [/list]
 
 [h2]Examples[/h2]

@@ -1,3 +1,8 @@
+# Changelog for Stamina Modifier - ACE 20.10.2023
+
+1.0.1.0
+- Added compatibility with Advanced Vault System: Remastered.
+
 # Changelog for Stamina Modifier - ACE 27.7.2023
 
 1.0.0.3

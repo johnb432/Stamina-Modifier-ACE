@@ -12,7 +12,9 @@ class CfgPatches {
             "ace_advanced_fatigue"
         };
         author = "johnb43";
-        authors[] = {"johnb43"};
+        authors[] = {
+            "johnb43"
+        };
         url = "https://github.com/johnb432/Stamina-Modifier-ACE";
         VERSION_CONFIG;
     };
