@@ -16,6 +16,7 @@ class CfgPatches {
             "johnb43"
         };
         url = "https://github.com/johnb432/Stamina-Modifier-ACE";
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };

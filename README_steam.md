@@ -16,9 +16,11 @@ Higher setting values mean lower stamina drain.
 [*] [b]Weapon-raised-sprinting compensation:[/b] If enabled and you are sprinting, it will not apply the [b]Weapon raised duty factor[/b] setting's value to the duty factor.
 [*] [b]Swim-sprinting duty factor:[/b] Duty factor that is applied, when you are swimming quickly.
 [*] [b]Dive-sprinting duty factor:[/b] Duty factor that is applied, when you are diving quickly.
-[*] [b]Muscle damage recovery factor:[/b] Recovery factor that is applied to muscle damage.
+[*] [b]Muscle damage factor:[/b] Factor that is applied to muscle damage. [b]Lower is better.[/b]
 [*] [b]AE1 Reserve recovery factor:[/b] Recovery factor that is applied to the AE1 Reserve.
 [*] [b]AE2 Reserve recovery factor:[/b] Recovery factor that is applied to the AE2 Reserve.
+[*] [b]AN Reserve recovery factor:[/b] Recovery factor that is applied to the AN Reserve.
+[*] [b]AN Fatigue factor:[/b] Factor that is applied to the AN Fatigue. [b]Lower is better. If set to 0, the AN Fatigue is disabled, but you must set 'anReserveFactor' to > 1, otherwise the AN Reserve will not recover.[/b] High AN Fatigue means High AN Reserve recovery.
 [*] [b]Alternative running duty factor:[/b] Duty factor that is applied, if "Alternative Running" is loaded and if you are using one of its animations.
 [*] [b]AVS vaulting duty factor:[/b] Duty factor that is applied, if "Advanced Vault System: Remastered" is loaded and if you are using one of its vaulting animations.
 [*] [b]AVS climbing duty factor:[/b] Duty factor that is applied, if "Advanced Vault System: Remastered" is loaded and if you are using one of its climbing animations.
@@ -42,7 +44,7 @@ If multiple duty factors apply, they are multiplied together.
 [h2]Warning[/h2]
 If you set the duty factors to be too low, meaning you consume more stamina than default ACE Advanced Fatigue, it might drain your stamina too quickly and break ACE Advanced Fatigue by not regenerating stamina anymore.
 
-If you use [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2975583316]ACE - D.U.M.P[/url], set 'Muscle damage recovery factor', 'AE1 Reserve recovery factor' and 'AE2 Reserve recovery factor' to 1.
+If you use [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2975583316]ACE - D.U.M.P[/url], set all 'Energy Reserves' and 'Muscle Damage' settings to default.
 
 [h2]Links[/h2]
 [list]

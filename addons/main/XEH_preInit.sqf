@@ -3,6 +3,6 @@
 ADDON = false;
 
 // CBA Settings
-#include "initSettings.sqf"
+#include "initSettings.inc.sqf"
 
 ADDON = true;

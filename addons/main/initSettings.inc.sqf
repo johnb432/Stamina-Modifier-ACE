@@ -2,7 +2,7 @@
 [
     QGVAR(advancedFatigueDutyDefault),
     "SLIDER",
-    ["Default duty factor", "Duty factor that is applied by default. Higher means lower stamina drain.\nIf you don't want to change ACE advanced fatigue's default behaviour, you must set this setting to 1."],
+    ["Default duty factor", "Duty factor that is applied by default. Higher means lower stamina drain."],
     [COMPONENT_NAME, "Normal"],
     DEFAULT_SETTINGS
 ] call CBA_fnc_addSetting;
@@ -59,7 +59,7 @@
 [
     QGVAR(advancedFatigueDutyDefaultSprinting),
     "SLIDER",
-    ["Default sprinting duty factor", "Duty factor that is applied by default when sprinting. Higher means lower stamina drain.\nIf you don't want to change ACE advanced fatigue's default behaviour when sprinting, you must set this setting to 1."],
+    ["Default sprinting duty factor", "Duty factor that is applied by default when sprinting. Higher means lower stamina drain."],
     [COMPONENT_NAME, "Sprinting"],
     DEFAULT_SETTINGS
 ] call CBA_fnc_addSetting;
@@ -67,7 +67,7 @@
 [
     QGVAR(advancedFatigueDutyCrouchingSprinting),
     "SLIDER",
-    ["Crouch-sprinting duty factor", "Duty factor that is applied when a player is crouch-sprinting. Higher means lower stamina drain.\nIf you don't want to change ACE advanced fatigue's default behaviour when crouch-sprinting, you must set this setting to 1."],
+    ["Crouch-sprinting duty factor", "Duty factor that is applied when a player is crouch-sprinting. Higher means lower stamina drain."],
     [COMPONENT_NAME, "Sprinting"],
     DEFAULT_SETTINGS
 ] call CBA_fnc_addSetting;
@@ -75,7 +75,7 @@
 [
     QGVAR(advancedFatigueDutyProneSprinting),
     "SLIDER",
-    ["Prone-sprinting duty factor", "Duty factor that is applied when a player is prone-sprinting. Higher means lower stamina drain.\nIf you don't want to change ACE advanced fatigue's default behaviour when prone-sprinting, you must set this setting to 1."],
+    ["Prone-sprinting duty factor", "Duty factor that is applied when a player is prone-sprinting. Higher means lower stamina drain."],
     [COMPONENT_NAME, "Sprinting"],
     DEFAULT_SETTINGS
 ] call CBA_fnc_addSetting;
@@ -91,7 +91,7 @@
 [
     QGVAR(advancedFatigueDutySwimmingSprinting),
     "SLIDER",
-    ["Swim-sprinting duty factor", "Duty factor that is applied when a player is swim-sprinting. Higher means lower stamina drain.\nIf you don't want to change ACE advanced fatigue's default behaviour when swim-sprinting, you must set this setting to 1."],
+    ["Swim-sprinting duty factor", "Duty factor that is applied when a player is swim-sprinting. Higher means lower stamina drain."],
     [COMPONENT_NAME, "Sprinting"],
     DEFAULT_SETTINGS
 ] call CBA_fnc_addSetting;
@@ -99,7 +99,7 @@
 [
     QGVAR(advancedFatigueDutyDivingSprinting),
     "SLIDER",
-    ["Dive-sprinting duty factor", "Duty factor that is applied when a player is dive-sprinting. Higher means lower stamina drain.\nIf you don't want to change ACE advanced fatigue's default behaviour when dive-sprinting, you must set this setting to 1."],
+    ["Dive-sprinting duty factor", "Duty factor that is applied when a player is dive-sprinting. Higher means lower stamina drain."],
     [COMPONENT_NAME, "Sprinting"],
     DEFAULT_SETTINGS
 ] call CBA_fnc_addSetting;
@@ -108,26 +108,43 @@
 [
     QGVAR(muscleDamageFactor),
     "SLIDER",
-    ["Muscle damage recovery factor", "Recovery factor that is applied to muscle damage. If set to 0, muscle damage is disabled.\nIf you don't want to change ACE advanced fatigue's default behaviour for muscle damage, you must set this setting to 1."],
+    ["Muscle damage factor", "Factor that is applied to muscle damage. If set to 0, muscle damage is disabled."],
     [COMPONENT_NAME, "Muscle Damage"],
-    [0, 1.5, 1, 4]
+    [0, 1.5, 1, 6]
 ] call CBA_fnc_addSetting;
 
 // AE reserves
 [
     QGVAR(ae1ReserveFactor),
     "SLIDER",
-    ["AE1 Reserves recovery factor", "Recovery factor that is applied to the AE1 Reserve. If set to < 0, the AE1 Reserve are kept at maximum.\nIf you don't want to change ACE advanced fatigue's default behaviour for muscle damage, you must set this setting to 1."],
-    [COMPONENT_NAME, "AE Reserves"],
+    ["AE1 Reserve recovery factor", "Recovery factor that is applied to the AE1 Reserve. If set to < 0, the AE1 Reserve are kept at maximum."],
+    [COMPONENT_NAME, "Energy Reserves"],
     [-0.01, 1.5, 1, 6]
 ] call CBA_fnc_addSetting;
 
 [
     QGVAR(ae2ReserveFactor),
     "SLIDER",
-    ["AE2 Reserve recovery factor", "Recovery factor that is applied to the AE1 Reserve. If set to < 0, the AE1 Reserve are kept at maximum.\nIf you don't want to change ACE advanced fatigue's default behaviour for muscle damage, you must set this setting to 1."],
-    [COMPONENT_NAME, "AE Reserves"],
+    ["AE2 Reserve recovery factor", "Recovery factor that is applied to the AE2 Reserve. If set to < 0, the AE2 Reserve are kept at maximum."],
+    [COMPONENT_NAME, "Energy Reserves"],
     [-0.01, 1.5, 1, 6]
+] call CBA_fnc_addSetting;
+
+// AN reserve & fatigue
+[
+    QGVAR(anReserveFactor),
+    "SLIDER",
+    ["AN Reserve recovery factor", "Recovery factor that is applied to the AN Reserve. If set to < 0, the AN Reserve are kept at maximum."],
+    [COMPONENT_NAME, "Energy Reserves"],
+    [-0.01, 1.5, 1, 6]
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(anFatigueFactor),
+    "SLIDER",
+    ["AN Fatigue factor", "Factor that is applied to the AN Fatigue. If set to 0, the AN Fatigue is disabled, but you must set 'anReserveFactor' to > 1, otherwise the AN Reserve will not recover."],
+    [COMPONENT_NAME, "Energy Reserves"],
+    [0, 1.5, 1, 6]
 ] call CBA_fnc_addSetting;
 
 // Alternative running compat
@@ -135,18 +152,18 @@ if (isClass (configFile >> "CfgPatches" >> "Alternative_Running")) then {
     [
         QGVAR(advancedFatigueDutyAlternativeRunning),
         "SLIDER",
-        ["Alternative running duty factor", "Duty factor that is applied when using alternative running. Higher means lower stamina drain.\nIf you don't want to change ACE advanced fatigue's default behaviour when using alternative running, you must set this setting to 1."],
+        ["Alternative running duty factor", "Duty factor that is applied when using alternative running. Higher means lower stamina drain."],
         [COMPONENT_NAME, "Compats"],
         DEFAULT_SETTINGS
     ] call CBA_fnc_addSetting;
 };
 
-// Alternative running compat
+// AVS compat
 if (isClass (configFile >> "CfgPatches" >> "APS_System")) then {
     [
         QGVAR(advancedFatigueDutyAVSVault),
         "SLIDER",
-        ["AVS vaulting duty factor", "Duty factor that is applied when using alternative running. Higher means lower stamina drain.\nIf you don't want to change ACE advanced fatigue's default behaviour when using alternative running, you must set this setting to 1."],
+        ["AVS vaulting duty factor", "Duty factor that is applied when using alternative running. Higher means lower stamina drain."],
         [COMPONENT_NAME, "Compats"],
         DEFAULT_SETTINGS
     ] call CBA_fnc_addSetting;
@@ -154,7 +171,7 @@ if (isClass (configFile >> "CfgPatches" >> "APS_System")) then {
     [
         QGVAR(advancedFatigueDutyAVSClimb),
         "SLIDER",
-        ["AVS climbing duty factor", "Duty factor that is applied when using alternative running. Higher means lower stamina drain.\nIf you don't want to change ACE advanced fatigue's default behaviour when using alternative running, you must set this setting to 1."],
+        ["AVS climbing duty factor", "Duty factor that is applied when using alternative running. Higher means lower stamina drain."],
         [COMPONENT_NAME, "Compats"],
         DEFAULT_SETTINGS
     ] call CBA_fnc_addSetting;
@@ -162,7 +179,7 @@ if (isClass (configFile >> "CfgPatches" >> "APS_System")) then {
     [
         QGVAR(advancedFatigueDutyAVSJump),
         "SLIDER",
-        ["AVS jumping duty factor", "Duty factor that is applied when using alternative running. Higher means lower stamina drain.\nIf you don't want to change ACE advanced fatigue's default behaviour when using alternative running, you must set this setting to 1."],
+        ["AVS jumping duty factor", "Duty factor that is applied when using alternative running. Higher means lower stamina drain."],
         [COMPONENT_NAME, "Compats"],
         DEFAULT_SETTINGS
     ] call CBA_fnc_addSetting;
@@ -170,7 +187,7 @@ if (isClass (configFile >> "CfgPatches" >> "APS_System")) then {
     [
         QGVAR(advancedFatigueDutyAVSSlide),
         "SLIDER",
-        ["AVS sliding duty factor", "Duty factor that is applied when using alternative running. Higher means lower stamina drain.\nIf you don't want to change ACE advanced fatigue's default behaviour when using alternative running, you must set this setting to 1."],
+        ["AVS sliding duty factor", "Duty factor that is applied when using alternative running. Higher means lower stamina drain."],
         [COMPONENT_NAME, "Compats"],
         DEFAULT_SETTINGS
     ] call CBA_fnc_addSetting;
@@ -181,7 +198,7 @@ if (isClass (configFile >> "CfgPatches" >> "APS_System")) then {
     if (!ace_advanced_fatigue_enabled) exitWith {};
 
     [{
-        if (!alive ACE_player) exitWith {};
+        if (!alive ACE_player || isGamePaused) exitWith {};
 
         ace_advanced_fatigue_muscleDamage = ace_advanced_fatigue_muscleDamage * GVAR(muscleDamageFactor);
 
@@ -196,5 +213,13 @@ if (isClass (configFile >> "CfgPatches" >> "APS_System")) then {
         } else {
             ace_advanced_fatigue_ae2Reserve = ((ace_advanced_fatigue_ae2Reserve * GVAR(ae2ReserveFactor)) min AE2_MAXRESERVE) max 0;
         };
+
+        if (GVAR(anReserveFactor) < 0) then {
+            ace_advanced_fatigue_anReserve = AN_MAXRESERVE;
+        } else {
+            ace_advanced_fatigue_anReserve = ((ace_advanced_fatigue_anReserve * GVAR(anReserveFactor)) min AN_MAXRESERVE) max 0;
+        };
+
+        ace_advanced_fatigue_anFatigue = ((ace_advanced_fatigue_anFatigue * GVAR(anFatigueFactor)) min 1) max 0;
     }, 1] call CBA_fnc_addPerFrameHandler;
 }] call CBA_fnc_addEventHandler;

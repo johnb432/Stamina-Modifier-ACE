@@ -1,3 +1,8 @@
+# Changelog for Stamina Modifier - ACE 2.1.2024
+
+1.0.2.0
+- Added AN Reserve and Fatigue settings.
+
 # Changelog for Stamina Modifier - ACE 20.10.2023
 
 1.0.1.0

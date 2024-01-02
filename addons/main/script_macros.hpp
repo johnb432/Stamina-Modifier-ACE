@@ -5,3 +5,4 @@
 // From ace_advanced_fatigue
 #define AE1_MAXRESERVE 4000000
 #define AE2_MAXRESERVE   84000
+#define AN_MAXRESERVE     2300
