@@ -7,8 +7,6 @@ class CfgPatches {
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "cba_main",
-            "cba_xeh",
             "ace_advanced_fatigue"
         };
         author = "johnb43";
